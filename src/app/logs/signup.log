@@ -1,0 +1,4 @@
+[2022-04-04T07:05:42+00:00][alert] some errors occured while signing you up: <br>name is required
+[2022-04-04T10:01:17+00:00][alert] some errors occured while signing you up: <br>name is required<br>email is required<br>password is required<br>role is required
+[2022-04-04T10:02:24+00:00][alert] <h3>Thank you for signing up</h3>
+[2022-04-04T10:02:51+00:00][alert] <h3>Thank you for signing up</h3>

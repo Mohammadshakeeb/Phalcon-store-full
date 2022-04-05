@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>FORM TO ADD NEW ACTIONS</h1>
+        <br><br>
+        <form method="POST" action="addmethod">
+    <label for="action"><b>ACTION<b></label>
+    <input type="text" name="action" id="action"> 
+    <label for="product">CHOOSE A CONTROLLER:</label>
+    <select  name="product">
+        <?php
+        $data=Components::find();
+        foreach( $data as $k=>$v){
+           
+          ?>
+        <option value="<?php echo $v->controller_id ;?>"><?php echo $v->controller; ?></option><?php } ?>
+        
+    </select><br></form>
+    <br><br>
+    <input type="submit" name="submit" value="SUBMIT">
+</body>
+</html>

@@ -1,0 +1,17 @@
+<?php
+use Phalcon\Logger;
+use Phalcon\Logger\Adapter\Stream;
+$adapter = new Stream('../app/logs/addorder.log');
+$logger  = new Logger(
+    'messages',
+    [
+        'signup' => $adapter,
+    ]
+);
+$logger->alert($message);
+?>
+<div class="alert alert-<?php echo $success === true ? 'success' : 'danger'; ?>">
+    <?php echo $message; ?>
+</div>
+
+<?php echo $this->tag->linkTo(['/order', 'Order listing', 'class' => 'btn btn-primary']); ?>

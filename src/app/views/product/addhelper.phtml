@@ -1,0 +1,20 @@
+<?php
+use Phalcon\Logger;
+use Phalcon\Logger\Adapter\Stream;
+$adapter = new Stream('../app/logs/addprod.log');
+$logger  = new Logger(
+    'messages',
+    [
+        'signup' => $adapter,
+    ]
+);
+$logger->alert($message);
+?>
+<div class="alert alert-<?php echo $success === true ? 'success' : 'danger'; ?>">
+    <?php echo $message; ?>
+</div>
+
+<?php echo $this->tag->linkTo(['/product', 'Product listing', 'class' => 'btn btn-primary']); ?>
+
+
+<!-- header('location:http://localhost:8080/product'); -->

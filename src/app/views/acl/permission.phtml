@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>SETTING ACCESS LEVELS</h1>
+        <br><br>
+        <form method="POST" action="http://localhost:8080/acl/addpermission">
+
+      <label for="role">CHOOSE A ROLE:</label>
+    <select  name="role">
+        <?php
+        $dat=Roles::find();
+        foreach( $dat as $k=>$v){
+           
+          ?>
+        <option value="<?php echo $v->role ;?>"><?php echo $v->role; ?></option><?php } ?>
+        
+    </select><br>
+    <br>  
+
+
+    <!-- <label for="action"><b>ACTION<b></label>
+    <input type="text" name="action" id="action">  -->
+    <label for="controller">CHOOSE A CONTROLLER:</label>
+    <select  name="controller">
+        <?php
+        $data=Components::find();
+        foreach( $data as $k=>$v){
+           
+          ?>
+        <option value="<?php echo $v->controller ;?>"><?php echo $v->controller; ?></option><?php } ?>
+        
+    </select><br>
+    <br>    
+    <label for="checkbox">ACTIONS</label><br>
+            <?php
+            
+            $k=Actions::find();
+            foreach($k as $key=>$v){ 
+            ?>
+            
+            <input type="checkbox"  name="<?php echo $v->method ;?>" value="<?php echo $v->method ;?>">
+             <label for="<?php echo $v->method ;?>"><?php echo $v->method ;?></label><br><?php } ?>
+
+    <input type="submit" name="submit" value="SUBMIT"></form>
+</body>
+</html>
